@@ -22,11 +22,19 @@
 
     <ion-pane>
         <ion-header-bar class="bar-stable">
-            <h1 class="title">Ionic Blank Starter</h1>
+            <h1 class="title">언제냐면</h1>
         </ion-header-bar>
         <ion-content>
             <div ui-view></div>
         </ion-content>
+        <ion-footer-bar align-title="left" class="tabs tabs-icon-only">
+          <a class="tab-item">
+            <i class="icon ion-qr-scanner" ui-sref="reader"></i>
+          </a>
+          <a class="tab-item">
+            <i class="icon ion-calendar" ui-sref="creator"></i>
+          </a>
+        </ion-footer-bar>
     </ion-pane>
 
     <!-- build:js scripts/vendor.js -->
@@ -52,6 +60,7 @@
     <script src="scripts/config.js"></script>
     <script src="scripts/app.js"></script>
     <script src="scripts/controllers/reader.js"></script>
+    <script src="scripts/controllers/creator.js"></script>
     <!-- endbuild -->
 </body>
 

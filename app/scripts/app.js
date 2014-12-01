@@ -12,6 +12,11 @@ angular.module('scheduleQrApp', ['ionic', 'config', 'ngCordova'])
                 url: '/reader',
                 templateUrl: 'views/reader.html',
                 controller: 'ReaderCtrl'
+            })
+            .state('creator', {
+                url: '/creator',
+                templateUrl: 'views/creator.html',
+                controller: 'CreatorCtrl'
             });
     }])
     .run(function ($ionicPlatform) {
