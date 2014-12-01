@@ -8,8 +8,7 @@
  * Controller of the scheduleQrApp
  */
 angular.module('scheduleQrApp')
-    .controller('ReaderCtrl', ['$scope', '$cordovaBarcodeScanner', function ($scope, $cordovaBarcodeScanner) {
-        console.log('111');
+    .controller('ReaderCtrl', ['$scope', '$cordovaBarcodeScanner', '$cordovaCalendar', function ($scope, $cordovaBarcodeScanner, $cordovaCalendar) {
         $scope.runQRCode = function () {
             $cordovaBarcodeScanner
                 .scan()
@@ -32,4 +31,18 @@ angular.module('scheduleQrApp')
                     $scope.cancelled = 'Error';
                 });
         };
+
+        $scope.registerSchedule = function () {
+        	$cordovaCalendar.createEventInteractively({
+        		title: $scope.schedule.SUMMARY,
+        		location: $scope.schedule.LOCATION,
+        		notes: $scope.schedule.DESCRIPTION,
+        		startDate: Date.create($scope.schedule.DTSTART),
+        		endDate: Date.create($scope.schedule.DTEND)
+        	}).then(function (result) {
+        		console.log(result);
+        	}, function (err) {
+				console.log(err);
+        	});
+        }
     }]);

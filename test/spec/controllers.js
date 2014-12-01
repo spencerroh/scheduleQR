@@ -1,5 +1,6 @@
 'use strict';
 
+/*
 describe('Controller: PetIndexCtrl', function () {
 
   var should = chai.should();
@@ -23,3 +24,4 @@ describe('Controller: PetIndexCtrl', function () {
   });
 
 });
+*/
