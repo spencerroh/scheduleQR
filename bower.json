@@ -2,7 +2,7 @@
   "name": "ScheduleQR",
   "version": "0.0.0",
   "dependencies": {
-    "ionic": "v1.0.0-beta.13",
+    "ionic": "v1.0.0-beta.14",
     "ngCordova": "~0.1.7-alpha",
     "sugarjs": "~1.4.1"
   },
