@@ -62,6 +62,8 @@
     "org.apache.cordova.vibration",
     "org.apache.cordova.inappbrowser",
     "https://github.com/wildabeast/BarcodeScanner",
-    "https://github.com/EddyVerbruggen/Calendar-PhoneGap-Plugin.git"
+    "https://github.com/EddyVerbruggen/Calendar-PhoneGap-Plugin.git",
+    "https://github.com/devgeeks/Canvas2ImagePlugin.git",
+    "https://github.com/EddyVerbruggen/Toast-PhoneGap-Plugin.git"
   ]
 }
