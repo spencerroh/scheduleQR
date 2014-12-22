@@ -19,23 +19,13 @@
 </head>
 
 <body ng-app="scheduleQrApp">
+    <ion-nav-bar class="bar-dark nav-title-android"
+                 align-title="center">
+        <ion-nav-back-button class="button-icon ion-arrow-left-c">
+        </ion-nav-back-button>
+    </ion-nav-bar>
 
-    <ion-pane>
-        <ion-header-bar class="bar-stable">
-            <h1 class="title">언제냐면</h1>
-        </ion-header-bar>
-        <ion-content>
-            <div ui-view></div>
-        </ion-content>
-        <ion-footer-bar align-title="left" class="tabs tabs-icon-only">
-          <a class="tab-item">
-            <i class="icon ion-qr-scanner" ui-sref="reader"></i>
-          </a>
-          <a class="tab-item">
-            <i class="icon ion-calendar" ui-sref="creator"></i>
-          </a>
-        </ion-footer-bar>
-    </ion-pane>
+    <ion-nav-view></ion-nav-view>
 
     <!-- build:js scripts/vendor.js -->
     <!-- <script src="vendor/someContribJs.js"></script> -->
@@ -44,12 +34,13 @@
     <script src="lib/angular-animate/angular-animate.js"></script>
     <script src="lib/angular-sanitize/angular-sanitize.js"></script>
     <script src="lib/angular-ui-router/release/angular-ui-router.js"></script>
-    <script src="lib/collide/collide.js"></script>
     <script src="lib/ionic/release/js/ionic.js"></script>
     <script src="lib/ionic/release/js/ionic-angular.js"></script>
     <script src="lib/ngCordova/dist/ng-cordova.js"></script>
     <script src="lib/sugarjs/release/sugar.min.js"></script>
     <!-- endbower -->
+    <script src="lib/qrcode/lib/qrcode.js"></script>
+    <script src="lib/angular-qr/src/angular-qr.js"></script>
     <!-- endbuild -->
 
     <!-- cordova script (this will be a 404 during development) -->
@@ -61,6 +52,8 @@
     <script src="scripts/app.js"></script>
     <script src="scripts/controllers/reader.js"></script>
     <script src="scripts/controllers/creator.js"></script>
+    <script src="scripts/controllers/showQR.js"></script>
+    <script src="scripts/services/scheduledata.js"></script>
     <!-- endbuild -->
 </body>
 

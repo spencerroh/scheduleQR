@@ -46,11 +46,5 @@ angular.module('scheduleQrApp')
                     console.log(err);
                 });
             };
-
-            /*
-			document.addEventListener("deviceready", function () {
-			  $scope.runQRCode();
-			}, false);
-            */
         }
     ]);
