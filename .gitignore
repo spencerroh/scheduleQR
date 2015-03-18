@@ -10,5 +10,5 @@ plugins
 *.swo
 *.log
 *.DS_Store
-
+.metadata
 app/scripts/config.js
