@@ -1,1 +1,22 @@
-// Your application styles go here
+@font-face {
+	font-family: "Noto CKJ-Light";
+	font-weight: 200;
+	src: url('../fonts/NotoSansCJKkr-Light.otf');
+}
+
+@font-face {
+	font-family: "Noto CKJ";
+	font-weight: normal;
+	src: url('../fonts/NotoSansCJKkr-Regular.otf');
+}
+
+@font-face {
+	font-family: "Noto CKJ";
+	font-weight: bold;
+	src: url('../fonts/NotoSansCJKkr-Bold.otf');
+}
+
+$font-family-sans-serif:          "Noto CKJ", sans-serif !default;
+$font-family-light-sans-serif:    "Noto CKJ-Light", sans-serif !default;
+
+@import "ionic/scss/ionic";
