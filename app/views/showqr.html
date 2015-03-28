@@ -1,9 +1,10 @@
 <ion-view title="Creator">
 	<ion-content class="padding">
 		<div style="font-family: Noto CKJ">병원간다</div>
-		<div>
+		<div style="text-align:center">
 			<qr-code text="encodedData" input-mode="'8bit'" size="400" correction-level="'L'" id="qr" header="병원가기" footer="OneShot Scheduler"></qr-code>
 		</div>
 		<button class="button button-dark" ng-click="saveToAlbum()">저장한다</button>
+		<button class="button button-dark" ng-click="shareSchedule()">공유</button>
 	</ion-content>
 </ion-view>
