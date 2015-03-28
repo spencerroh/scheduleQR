@@ -8,9 +8,9 @@
  * Controller of the scheduleQrApp
  */
 angular.module('scheduleQrApp')
-    .controller('ShowQRCtrl', ['$scope', 'scheduleData', '$window', '$cordovaToast',
+    .controller('ShowQRCtrl', ['$scope', 'scheduleData', '$window', '$cordovaToast', '$cordovaSocialSharing',
 
-        function($scope, scheduleData, $window, $cordovaToast) {
+        function ($scope, scheduleData, $window, $cordovaToast, $cordovaSocialSharing) {
             // QRickit qrickit.com
             // BEGIN:VEVENT
             // Event name       SUMMARY
@@ -71,18 +71,37 @@ angular.module('scheduleQrApp')
                 return out;
             }
 
-            $scope.saveToAlbum = function() {
+            $scope.saveToAlbum = function () {
                 if ($window.canvas2ImagePlugin) {
                     $window.canvas2ImagePlugin.saveImageDataToLibrary(
-                        function(/*success*/) {
+                        function ( /*success*/ ) {
                             $cordovaToast.show('QR코드를 저장했습니다.', 'short', 'center');
                         },
-                        function(/*error*/) {
+                        function ( /*error*/ ) {
                             $cordovaToast.show('저장하는데 실패했습니다.', 'short', 'center');
                         },
                         document.querySelector('#qr > canvas')
                     );
                 }
+            };
+
+            $scope.shareSchedule = function () {
+                var text = extractText(scheduleData);
+                var url = document.querySelector('#qr > canvas').toDataURL();
+
+                // 테스트한 결과 카톡은 이미지만 전송됨. 글자는 전송안됨.
+
+                $cordovaSocialSharing
+                    .share(text, null, url, null)
+                    .then(function (result) {
+                        // Success!
+                    }, function (err) {
+                        // An error occured. Show a message to the user
+                    });
+            };
+
+            var extractText = function (encoded) {
+                return encoded.summary;
             };
 
             var schedule = scheduleData.getSchedule();
