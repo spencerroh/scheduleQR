@@ -64,6 +64,7 @@
     "https://github.com/EddyVerbruggen/Calendar-PhoneGap-Plugin.git",
     "https://github.com/devgeeks/Canvas2ImagePlugin.git",
     "https://github.com/EddyVerbruggen/Toast-PhoneGap-Plugin.git",
-    "https://github.com/spencerroh/BarcodeScanner"
+    "https://github.com/spencerroh/BarcodeScanner",
+    "https://github.com/EddyVerbruggen/SocialSharing-PhoneGap-Plugin.git"
   ]
 }
