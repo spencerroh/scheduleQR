@@ -7,8 +7,8 @@
  * # qrCode
  */
 angular.module('scheduleQrApp')
-    .directive('qrCode', ['$timeout', '$window',
-        function ($timeout, $window) {
+    .directive('qrCode', ['$timeout', '$window', 'scheduleData',
+        function ($timeout, $window, scheduleData) {
 
             return {
                 restrict: 'E',
@@ -65,9 +65,11 @@ angular.module('scheduleQrApp')
                         var modules = qr.getModuleCount();
                         var tile = (size - 20) / modules;
 
-                        var header = '병원간다요?';
-                        var footer1 = '2015.08.12 12:00 ~ 2015.08.12 24:00';
-                        var footer2 = '행운이가 세상 빛을 본다';
+                        var schedule = scheduleData.getSchedule();
+
+                        var header = schedule.summary;
+                        var footer1 = '시작 : ' + schedule.begin;
+                        var footer2 = '끝 : ' + schedule.end;
                         var appName = '원샷 스케쥴러';
 
                         var fontSize = 20;
