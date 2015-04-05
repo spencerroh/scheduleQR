@@ -2,13 +2,13 @@
 	<ion-content class="padding">
 		<button class="button button-block button-dark" ng-click="runQRCode()">Scan</button>
 
-		<div class="card" ng-show="text != undefined">
+		<!-- <div class="card" ng-show="text != undefined">
 			<div class="item">
 				<input type="text" value="{{text}}" />
 			</div>
 			<div class="item">{{format}}</div>
 			<div class="item">{{cancelled}}</div>
-		</div>
+		</div> -->
 
 		<div class="card" ng-show="schedule != undefined">
 			<div class="item">{{schedule.SUMMARY}}</div>
@@ -20,6 +20,6 @@
 			<button class="button button-dark" ng-click="registerSchedule()">등록</button>
 		</div>
 
-		
+
 	</ion-content>
-</ion-view>	
+</ion-view>

@@ -20,3 +20,10 @@ $font-family-sans-serif:          "Noto CKJ", sans-serif !default;
 $font-family-light-sans-serif:    "Noto CKJ-Light", sans-serif !default;
 
 @import "ionic/scss/ionic";
+
+.keyboard-open .tabs{
+  display:none;
+  }
+.keyboard-open .has-tabs{
+ bottom:0;
+ }
