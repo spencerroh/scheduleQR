@@ -35,7 +35,12 @@
 					   ng-show="scheduleForm.endField.$dirty && scheduleForm.endField.$invalid"></i>
 				</label>
 				<label class="item item-input">
-			    	<textarea placeholder="메모" ng-model="schedule.description"></textarea>
+					<input name="memoField"
+								type="text"
+							placeholder="메모"
+							ng-model="schedule.description"
+							ng-minlength="1"/>
+			    	<!-- <textarea placeholder="메모" ng-model="schedule.description"></textarea> -->
 			  	</label>
 				<button class="button button-block button-dark"
 				        ng-click="generate()"
