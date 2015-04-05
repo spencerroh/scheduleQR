@@ -7,6 +7,7 @@
 					       type="text"
 						   placeholder="제목을 입력하세요"
 						   ng-model="schedule.summary"
+						   ng-minlength="1"
 						   required />
 					<i class="icon icon-left ion-close-round small"
 					   ng-show="scheduleForm.summaryField.$dirty && scheduleForm.summaryField.$invalid"></i>
@@ -41,10 +42,10 @@
 							ng-minlength="1"/>
 			    	<!-- <textarea placeholder="메모" ng-model="schedule.description"></textarea> -->
 			  	</label>
+				<button class="button button-block button-dark"
+				        ng-click="generate()"
+				        ng-disabled="scheduleForm.$invalid">만들기</button>
 			</div>
-			<button class="button button-block button-dark"
-							ng-click="generate()"
-							ng-disabled="scheduleForm.$invalid">만들기</button>
 		</form>
 	</ion-content>
 </ion-view>
