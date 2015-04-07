@@ -8,17 +8,17 @@
  * Controller of the scheduleQrApp
  */
 angular.module('scheduleQrApp')
-    .controller('ReaderCtrl', ['$scope', '$cordovaBarcodeScanner', '$cordovaCalendar',
-        function($scope, $cordovaBarcodeScanner, $cordovaCalendar) {
-            $scope.runQRCode = function() {
+    .controller('ReaderCtrl', ['$scope', '$cordovaBarcodeScanner', '$cordovaCalendar', '$ionicPlatform',
+        function ($scope, $cordovaBarcodeScanner, $cordovaCalendar, $ionicPlatform) {
+            $scope.runQRCode = function () {
                 $cordovaBarcodeScanner
                     .scan()
-                    .then(function(imageData) {
+                    .then(function (imageData) {
                         var pattern = /(\w+):(.*)$/gm;
                         var matches = imageData.text.match(pattern);
 
                         $scope.schedule = {};
-                        angular.forEach(matches, function(match) {
+                        angular.forEach(matches, function (match) {
                             var groups = /(\w+):(.*)$/.exec(match);
                             $scope.schedule[groups[1]] = groups[2];
                         });
@@ -26,25 +26,28 @@ angular.module('scheduleQrApp')
                         $scope.text = imageData.text;
                         $scope.format = imageData.format;
                         $scope.cancelled = imageData.cancelled;
-                    }, function(error) {
+                    }, function (error) {
                         $scope.text = error;
                         $scope.format = 'Error';
                         $scope.cancelled = 'Error';
                     });
             };
-
-            $scope.registerSchedule = function() {
+            $scope.registerSchedule = function () {
                 $cordovaCalendar.createEventInteractively({
                     title: $scope.schedule.SUMMARY,
                     location: $scope.schedule.LOCATION,
                     notes: $scope.schedule.DESCRIPTION,
                     startDate: Date.create($scope.schedule.DTSTART),
                     endDate: Date.create($scope.schedule.DTEND)
-                }).then(function(result) {
+                }).then(function (result) {
                     console.log(result);
-                }, function(err) {
+                }, function (err) {
                     console.log(err);
                 });
             };
-        }
-    ]);
+
+            $ionicPlatform.ready(function () {
+                console.log('HeHe');
+                $scope.runQRCode();
+            });
+}]);

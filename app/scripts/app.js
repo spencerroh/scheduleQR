@@ -6,7 +6,7 @@
 // the 2nd parameter is an array of 'requires'
 angular.module('scheduleQrApp', ['ionic', 'config', 'ngCordova', 'ja.qr'])
     .config(['$stateProvider', '$urlRouterProvider', '$ionicConfigProvider',
-        function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
+        function ($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
             $stateProvider
                 .state('tabs', {
                     url: '/tabs',
@@ -48,8 +48,8 @@ angular.module('scheduleQrApp', ['ionic', 'config', 'ngCordova', 'ja.qr'])
             $ionicConfigProvider.platform.android.tabs.style('standard');
         }
     ])
-    .run(function($ionicPlatform) {
-        $ionicPlatform.ready(function() {
+    .run(function ($ionicPlatform) {
+        $ionicPlatform.ready(function () {
             // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
             // for form inputs)
             if (window.cordova && window.cordova.plugins.Keyboard) {
