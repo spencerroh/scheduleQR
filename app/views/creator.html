@@ -4,42 +4,47 @@
 			<div class="list list-inset">
 				<label class="item item-input item-icon-right">
 					<input name="summaryField"
-					       type="text" 
-						   placeholder="제목" 
-						   ng-model="schedule.summary" 
-						   ng-minlength="1" 
+					       type="text"
+						   placeholder="제목을 입력하세요"
+						   ng-model="schedule.summary"
+						   ng-minlength="1"
 						   required />
 					<i class="icon icon-left ion-close-round small"
 					   ng-show="scheduleForm.summaryField.$dirty && scheduleForm.summaryField.$invalid"></i>
 				</label>
 				<label class="item item-input">
-					<input type="text" placeholder="위치" ng-model="schedule.location" />
+					<input type="text" placeholder="장소를 입력하세요" ng-model="schedule.location" />
 				</label>
 				<label class="item item-input item-icon-right item-stacked-label">
 					<span class="input-label">시작</span>
 					<input name="beginField"
-					       type="datetime-local" 
+					       type="datetime-local"
 					       ng-model="schedule.begin"
-					       placeholder="YYYY-MM-DD"
+					       placeholder="시작 날짜를 입력하세요"
 					       required />
 					<i class="icon icon-left ion-close-round"
 					   ng-show="scheduleForm.beginField.$dirty && scheduleForm.beginField.$invalid"></i>
 				</label>
-				<label class="item item-input item-icon-right">
+				<label class="item item-input item-icon-right item-stacked-label">
 					<span class="input-label">종료</span>
 					<input name="endField"
-					       type="datetime-local" 
-					       ng-model="schedule.end" 
+					       type="datetime-local"
+					       ng-model="schedule.end"
 					       required />
 					<i class="icon icon-left ion-close-round"
 					   ng-show="scheduleForm.endField.$dirty && scheduleForm.endField.$invalid"></i>
 				</label>
 				<label class="item item-input">
-			    	<textarea placeholder="메모" ng-model="schedule.description"></textarea>
+					<input name="memoField"
+								type="text"
+							placeholder="메모"
+							ng-model="schedule.description"
+							ng-minlength="1"/>
+			    	<!-- <textarea placeholder="메모" ng-model="schedule.description"></textarea> -->
 			  	</label>
-				<button class="button button-block button-dark" 
+				<button class="button button-block button-dark"
 				        ng-click="generate()"
-				        ng-disabled="scheduleForm.$invalid">만들기</button> 
+				        ng-disabled="scheduleForm.$invalid">만들기</button>
 			</div>
 		</form>
 	</ion-content>
