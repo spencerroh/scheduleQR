@@ -51,5 +51,5 @@
     <icon src="resources/ios/icon/icon-small@3x.png" width="87" height="87"/>
   </platform>
   <preference name="SplashScreen" value="screen"/>
-  <preference name="SplashScreenDelay" value="3000"/>
+  <preference name="SplashScreenDelay" value="1000"/>
 </widget>
