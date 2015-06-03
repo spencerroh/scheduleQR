@@ -1,16 +1,16 @@
-<ion-view title="Creator">
+<ion-view title="Create">
 	<ion-content class="padding">
 		<form novalidate name="scheduleForm">
 			<div class="list list-inset">
-				<label class="item item-input item-icon-right">
+				<label class="item item-input">
 					<input name="summaryField"
 					       type="text"
 						   placeholder="제목을 입력하세요"
 						   ng-model="schedule.summary"
 						   ng-minlength="1"
 						   required />
-					<i class="icon icon-left ion-close-round small"
-					   ng-show="scheduleForm.summaryField.$dirty && scheduleForm.summaryField.$invalid"></i>
+					<!-- <i class="icon icon-left ion-close-round small"
+					   ng-show="scheduleForm.summaryField.$dirty && scheduleForm.summaryField.$invalid"></i> -->
 				</label>
 				<label class="item item-input">
 					<input type="text" placeholder="장소를 입력하세요" ng-model="schedule.location" />
@@ -22,8 +22,8 @@
 					       ng-model="schedule.begin"
 					       placeholder="시작 날짜를 입력하세요"
 					       required />
-					<i class="icon icon-left ion-close-round"
-					   ng-show="scheduleForm.beginField.$dirty && scheduleForm.beginField.$invalid"></i>
+					<!-- <i class="icon icon-left ion-close-round"
+					   ng-show="scheduleForm.beginField.$dirty && scheduleForm.beginField.$invalid"></i> -->
 				</label>
 				<label class="item item-input item-icon-right item-stacked-label">
 					<span class="input-label">종료</span>
@@ -31,8 +31,8 @@
 					       type="datetime-local"
 					       ng-model="schedule.end"
 					       required />
-					<i class="icon icon-left ion-close-round"
-					   ng-show="scheduleForm.endField.$dirty && scheduleForm.endField.$invalid"></i>
+					<!-- <i class="icon icon-left ion-close-round"
+					   ng-show="scheduleForm.endField.$dirty && scheduleForm.endField.$invalid"></i> -->
 				</label>
 				<label class="item item-input">
 					<input name="memoField"

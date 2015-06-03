@@ -1,10 +1,10 @@
-<ion-view title="Creator">
+<ion-view title="QRCode">
 	<ion-content class="padding">
 		<!-- <div style="font-family: Noto CKJ">병원간다</div> -->
 		<div style="text-align:center">
 			<qr-code text="encodedData" input-mode="'8bit'" correction-level="'L'" id="qr"></qr-code>
 		</div>
-		<button class="button button-block button-dark" ng-click="saveToAlbum()">사진첩에 저장</button>
-		<button class="button button-block button-dark" ng-click="shareSchedule()">공유하기</button>
+		<button class="button button-block button-assertive" ng-click="saveToAlbum()">사진첩에 저장</button>
+		<button class="button button-block button-assertive" ng-click="shareSchedule()">공유하기</button>
 	</ion-content>
 </ion-view>

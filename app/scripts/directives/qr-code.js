@@ -67,18 +67,19 @@ angular.module('scheduleQrApp')
 
                         var schedule = scheduleData.getSchedule();
 
-                        var header = schedule.summary;
-                        var footer1 = '시작 : ' + schedule.begin;
-                        var footer2 = '끝 : ' + schedule.end;
-                        var appName = '원샷 스케쥴러';
+                        var header = 'ONE SHOT SCHEDULER';
+                        // var header = schedule.summary;
+                        // var footer1 = '시작 : ' + schedule.begin;
+                        // var footer2 = '끝 : ' + schedule.end;
+                        // var appName = '원샷 스케쥴러';
 
-                        var fontSize = 20;
+                        var fontSize = 10;
                         var lineMargin = 10;
                         var lrMargin = 10;
                         var y = 0;
 
                         canvas.width = size;
-                        canvas.height = size + 6 * lineMargin + 4 * fontSize - 10;
+                        canvas.height = size + 2 * lineMargin + 4 * fontSize - 10;
 
                         if (canvas2D) {
                             context.fillStyle = "#ffffff";
@@ -86,36 +87,36 @@ angular.module('scheduleQrApp')
 
                             y = lineMargin + fontSize;
 
-                            context.fillStyle = "#000000";
-                            context.font = 'bold 20px Noto CKJ';
+                            context.fillStyle = "#222222";
+                            context.font = 'bold 17px Noto CKJ';
                             context.fillText(header, (canvas.width - context.measureText(header).width) / 2, y);
 
                             y += lineMargin;
 
                             draw(context, qr, modules, tile, 10, y + 10);
-                            context.strokeStyle = "#6699ff";
-                            context.lineWidth = 1;
+                            context.strokeStyle = "#ffffff";
+                            context.lineWidth = 0;
                             context.strokeRect(5, y + 5, size - 10, size - 10);
 
                             fontSize = 15;
                             y += canvas.width + lineMargin + fontSize;
 
-                            context.fillStyle = "#000000";
-                            context.font = 'bold 15px Noto CKJ';
-                            context.fillText(footer1, canvas.width - context.measureText(footer1).width - lrMargin, y);
-
-                            y += lineMargin + fontSize;
-
-                            context.fillStyle = "#000000";
-                            context.font = 'bold 15px Noto CKJ';
-                            context.fillText(footer2, canvas.width - context.measureText(footer2).width - lrMargin, y);
-
-                            fontSize = 20;
-                            y += lineMargin + fontSize;
-
-                            context.fillStyle = "#4477ff";
-                            context.font = 'bold 20px Noto CKJ';
-                            context.fillText(appName, (canvas.width - context.measureText(appName).width) / 2, y);
+                            // context.fillStyle = "#000000";
+                            // context.font = 'bold 15px Noto CKJ';
+                            // context.fillText(footer1, canvas.width - context.measureText(footer1).width - lrMargin, y);
+                            //
+                            // y += lineMargin + fontSize;
+                            //
+                            // context.fillStyle = "#000000";
+                            // context.font = 'bold 15px Noto CKJ';
+                            // context.fillText(footer2, canvas.width - context.measureText(footer2).width - lrMargin, y);
+                            //
+                            // fontSize = 20;
+                            // y += lineMargin + fontSize;
+                            //
+                            // context.fillStyle = "#4477ff";
+                            // context.font = 'bold 20px Noto CKJ';
+                            // context.fillText(appName, (canvas.width - context.measureText(appName).width) / 2, y);
 
                             scope.canvasImage = canvas.toDataURL();
                         }
