@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <widget id="com.example.ScheduleQR" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-  <name>ScheduleQR</name>
+  <name>One Shot Scheduler</name>
   <description>
-        A sample Apache Cordova application that responds to the deviceready event.
+        Schedule Share Application by QR-Code
     </description>
-  <author email="dev@cordova.apache.org" href="http://cordova.io">
-        Apache Cordova Team
+  <author email="redspy@lycos.co.kr" href="http://utoxiz.iptime.org">
+        Grace Development Team
     </author>
   <content src="index.html"/>
   <access origin="*"/>
