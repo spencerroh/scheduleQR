@@ -43,7 +43,6 @@ angular.module('scheduleQrApp', ['ionic', 'config', 'ngCordova', 'ja.qr'])
 
             $urlRouterProvider.otherwise('tabs/reader');
 
-            console.log($ionicConfigProvider.views.transition());
             $ionicConfigProvider.platform.android.tabs.position('bottom');
             $ionicConfigProvider.platform.android.tabs.style('standard');
         }

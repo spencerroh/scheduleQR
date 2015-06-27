@@ -5,7 +5,8 @@
     "ionic": "v1.0.0-beta.14",
     "ngCordova": "~0.1.7-alpha",
     "sugarjs": "~1.4.1",
-    "angular-qr": "~0.2.0"
+    "angular-qr": "~0.2.0",
+    "qcode-decoder": "https://github.com/spencerroh/qcode-decoder.git#0.1.0-alpha"
   },
   "devDependencies": {
     "angular-mocks": "~1.2.17",
