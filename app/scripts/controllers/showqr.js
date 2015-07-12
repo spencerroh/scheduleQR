@@ -33,9 +33,7 @@ angular.module('scheduleQrApp')
                 var begin = schedule.begin || '';
                 var end = schedule.end || '';
                 var description = schedule.description || '';
-
-                console.log(summary, location, begin, end, description);
-
+                
                 var encode = 'BEGIN:VEVENT\n';
                 encode += 'SUMMARY:' + summary + '\n';
                 encode += 'LOCATION:' + location + '\n';
@@ -43,6 +41,8 @@ angular.module('scheduleQrApp')
                 encode += 'DTSTART:' + Date.create(begin).format(Date.ISO8601_DATETIME) + '\n';
                 encode += 'DTEND:' + Date.create(end).format(Date.ISO8601_DATETIME) + '\n';
                 encode += 'END:VEVENT';
+                
+                console.log(encode);
 
                 return getBytes(encode);
             }
@@ -106,5 +106,7 @@ angular.module('scheduleQrApp')
 
             var schedule = scheduleData.getSchedule();
             $scope.encodedData = makeQRCode(schedule);
+            
+            console.log($scope.encodedData);
         }
     ]);

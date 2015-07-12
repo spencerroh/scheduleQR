@@ -1,8 +1,9 @@
-<ion-view title="Create">
+<ion-view title="일정 QR 만들기">
 	<ion-content class="padding">
 		<form novalidate name="scheduleForm">
-			<div class="list list-inset">
-				<label class="item item-input">
+			<div class="list">
+				<label class="item item-input item-stacked-label">
+                    <span class="input-label">제목</span>
 					<input name="summaryField"
 					       type="text"
 						   placeholder="제목을 입력하세요"
@@ -12,36 +13,34 @@
 					<!-- <i class="icon icon-left ion-close-round small"
 					   ng-show="scheduleForm.summaryField.$dirty && scheduleForm.summaryField.$invalid"></i> -->
 				</label>
-				<label class="item item-input">
+				<label class="item item-input item-stacked-label">
+                    <span class="input-label">장소</span>
 					<input type="text" placeholder="장소를 입력하세요" ng-model="schedule.location" />
 				</label>
-				<label class="item item-input item-icon-right item-stacked-label">
-					<span class="input-label">시작</span>
-					<input name="beginField"
-					       type="datetime-local"
-					       ng-model="schedule.begin"
-					       placeholder="시작 날짜를 입력하세요"
-					       required />
-					<!-- <i class="icon icon-left ion-close-round"
-					   ng-show="scheduleForm.beginField.$dirty && scheduleForm.beginField.$invalid"></i> -->
-				</label>
-				<label class="item item-input item-icon-right item-stacked-label">
-					<span class="input-label">종료</span>
-					<input name="endField"
-					       type="datetime-local"
-					       ng-model="schedule.end"
-					       required />
-					<!-- <i class="icon icon-left ion-close-round"
-					   ng-show="scheduleForm.endField.$dirty && scheduleForm.endField.$invalid"></i> -->
-				</label>
-				<label class="item item-input">
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">설명</span>
 					<input name="memoField"
-								type="text"
-							placeholder="메모"
+				            type="text"
+							placeholder="일정에 대한 설명을 입력하세요"
 							ng-model="schedule.description"
 							ng-minlength="1"/>
-			    	<!-- <textarea placeholder="메모" ng-model="schedule.description"></textarea> -->
 			  	</label>
+				<div class="item item-input item-icon-right item-stacked-label">
+					<span class="input-label">시작</span>
+                    <!--
+					<input name="beginField"
+					       type="datetime-local"
+                           style="text-align:center"
+					       ng-model="schedule.begin"
+					       placeholder="시작 날짜를 입력하세요"
+					       required />-->
+                    <div class="datepicker" ng-click="pickStartDate()">{{beginDate}}</div>
+				</div>
+				<div class="item item-input item-icon-right item-stacked-label">
+					<span class="input-label">종료</span>
+					<div class="datepicker" ng-click="pickEndDate()">{{endDate}}</div>
+				</div>
+
 				<button class="button button-block button-assertive"
 				        ng-click="generate()"
 				        ng-disabled="scheduleForm.$invalid">만들기</button>

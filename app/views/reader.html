@@ -1,26 +1,7 @@
-<ion-view title="Scan">
+<ion-view title="QR코드 읽기">
 	<ion-content class="padding">
-		<button class="button button-block button-assertive" ng-click="runQRCode()">Scan</button>
+        One Shot 스케쥴러
+		<button class="button button-block button-assertive" ng-click="runQRCode()">카메라로 찍기</button>
         <button class="button button-block button-assertive" ng-click="readFromCameraRoll()">사진첩에서 선택하기</button>
-
-		<!-- <div class="card" ng-show="text != undefined">
-			<div class="item">
-				<input type="text" value="{{text}}" />
-			</div>
-			<div class="item">{{format}}</div>
-			<div class="item">{{cancelled}}</div>
-		</div> -->
-
-		<div class="card" ng-show="schedule.SUMMARY != undefined">
-			<div class="item">{{schedule.SUMMARY}}</div>
-			<div class="item">{{schedule.LOCATION}}</div>
-			<div class="item">{{schedule.DESCRIPTION}}</div>
-			<div class="item">{{schedule.DTSTART}}</div>
-			<div class="item">{{schedule.DTEND}}</div>
-
-			<button class="button button-block button-assertive" ng-click="registerSchedule()">등록</button>
-		</div>
-
-
 	</ion-content>
 </ion-view>

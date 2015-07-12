@@ -1,3 +1,4 @@
+/*
 @font-face {
 	font-family: "Noto CKJ-Light";
 	font-weight: 200;
@@ -16,9 +17,10 @@
 	src: url('../fonts/NotoSansCJKkr-Bold.otf');
 }
 
+
 $font-family-sans-serif:          "Noto CKJ", sans-serif !default;
 $font-family-light-sans-serif:    "Noto CKJ-Light", sans-serif !default;
-
+*/
 $assertive: #FF5043 !default;
 @import "ionic/scss/ionic";
 
@@ -28,3 +30,11 @@ $assertive: #FF5043 !default;
 .keyboard-open .has-tabs{
  bottom:0;
  }
+
+.datepicker {
+    padding: 10px 0px;
+    text-align: center;
+}
+.datepicker.activated {
+    background-color:#cccccc;
+}

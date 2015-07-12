@@ -10,24 +10,26 @@
  * Controller of the scheduleQrApp
  */
     angular.module('scheduleQrApp')
-        .controller('ReaderCtrl', ['$scope', '$cordovaBarcodeScanner', '$cordovaCalendar', '$cordovaCamera', '$ionicPlatform', '$state',
-            function ($scope, $cordovaBarcodeScanner, $cordovaCalendar, $cordovaCamera, $ionicPlatform, $state) {
+        .controller('ReaderCtrl', ['$scope', '$cordovaBarcodeScanner', '$cordovaCamera', '$ionicPlatform', '$state', 'scheduleData', '$cordovaToast',
+            function ($scope, $cordovaBarcodeScanner, $cordovaCamera, $ionicPlatform, $state, scheduleData, $cordovaToast) {
                 function showQRData(qrData) {
                     console.log(qrData);
-
+                    
                     var pattern = /(\w+):(.*)$/gm;
                     var matches = qrData.match(pattern);
 
-                    $scope.schedule = {};
+                    var schedule = {};
                     angular.forEach(matches, function (match) {
                         var groups = /(\w+):(.*)$/.exec(match);
-                        $scope.schedule[groups[1]] = groups[2];
+                        schedule[groups[1]] = groups[2];
                     });
 
-                    $scope.$apply();
+                    scheduleData.setSchedule(schedule);
+                    
+                    $state.go('^.result');
                 }
-
-                function UTF8ToUTF16(str) {
+                
+                function convertUTF16ToUTF8(str) {
                     var out, i, len, c;
                     var char2, char3;
 
@@ -98,32 +100,15 @@
                         var qr = new QCodeDecoder();
                         qr.decodeFromImage(img, function (er, res) {
                             if (er === null) {
-                                showQRData(UTF8ToUTF16(res));
+                                showQRData(convertUTF16ToUTF8(res));
                             }
                             else {
+                                $cordovaToast.show('QR코드를 읽는데 실패했습니다.', 'short', 'center');
                             }
                         });
                     });
                 };
-
-                $scope.registerSchedule = function () {
-                    $cordovaCalendar.createEventInteractively({
-                        title: $scope.schedule.SUMMARY,
-                        location: $scope.schedule.LOCATION,
-                        notes: $scope.schedule.DESCRIPTION,
-                        startDate: Date.create($scope.schedule.DTSTART),
-                        endDate: Date.create($scope.schedule.DTEND)
-                    }).then(function (result) {
-                        console.log(result);
-                    }, function (err) {
-                        console.log(err);
-                    });
-                };
-            /*
-            $ionicPlatform.ready(function () {
-                console.log('HeHe');
-                $scope.runQRCode();
-            });
-            */
-}]);
+            }
+        ]
+    );
 })(window.QCodeDecoder);

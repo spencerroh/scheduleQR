@@ -16,12 +16,11 @@ angular.module('scheduleQrApp')
         // Public API here
         return {
             setSchedule: function(s) {
-                console.log(s);
                 schedule = s;
             },
 
             getSchedule: function() {
-                return schedule;
+                return angular.copy(schedule);
             }
         };
     });

@@ -22,6 +22,15 @@ angular.module('scheduleQrApp', ['ionic', 'config', 'ngCordova', 'ja.qr'])
                         }
                     }
                 })
+                .state('tabs.result', {
+                    url: '/reader/result',
+                    views: {
+                        'reader-tab': {
+                            templateUrl: 'views/readerResult.html',
+                            controller: 'ReaderResultCtrl'
+                        }
+                    }
+                })
                 .state('tabs.creator', {
                     url: '/creator',
                     views: {
