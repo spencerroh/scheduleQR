@@ -1,0 +1,14 @@
+<ion-view title="QR코드 일정 보기">
+	<ion-content class="padding">
+
+		<div class="card">
+            <div class="item">{{schedule.SUMMARY}}</div>
+			<div class="item">{{schedule.LOCATION}}</div>
+			<div class="item">{{schedule.DESCRIPTION}}</div>
+			<div class="item">{{schedule.DTSTART}}</div>
+			<div class="item">{{schedule.DTEND}}</div>
+		</div>
+
+        <button class="button button-block button-assertive" ng-click="registerSchedule()">일정에 등록하기</button>
+	</ion-content>
+</ion-view>
